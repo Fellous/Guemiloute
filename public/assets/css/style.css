@@ -1,0 +1,131 @@
+/* commit name: improved-global-styles */
+/* Variables de couleur */
+:root {
+  --blue-dark: #3585e6;   /* Bleu marine */
+  --blue-light: #1e81b0;  /* Bleu clair */
+  --white: #ffffff;
+  --gray-light: #f8f9fa; /* Gris clair */
+  --gray-dark: #343a40;  /* Gris foncé */
+}
+
+/* Corps de page */
+body {
+  background-color: var(--gray-light);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Navbar et footer */
+.bg-darkblue {
+  background-color: var(--blue-dark) !important;
+}
+.text-bg-darkblue {
+  background-color: var(--blue-dark) !important;
+  color: var(--white) !important;
+}
+.nav-link {
+  color: var(--white) !important;
+}
+.nav-link:hover {
+  color: var(--blue-light) !important;
+}
+
+/* Boutons */
+.btn-primary {
+  background-color: var(--blue-light) !important;
+  border-color: var(--blue-light) !important;
+  font-weight: 600;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: var(--blue-dark) !important;
+  border-color: var(--blue-dark) !important;
+}
+
+/* Contenu */
+.content {
+  min-height: calc(100vh - 110px);
+}
+
+/* Offcanvas style (menu mobile) */
+.offcanvas.offcanvas-end.text-bg-darkblue {
+  background-color: var(--blue-dark);
+}
+
+/* Uniformiser les images */
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Pour uniformiser les tailles */
+  border-radius: 0.25rem; /* Légère bordure arrondie */
+}
+
+/* Cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 0.5rem;
+}
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.card-title {
+  font-weight: bold;
+  color: var(--blue-dark);
+}
+.card-text {
+  color: var(--gray-dark);
+}
+
+/* Modals */
+.modal-content {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.modal-header {
+  background-color: var(--blue-dark);
+  color: var(--white);
+  border-bottom: none;
+}
+.modal-title {
+  font-weight: bold;
+}
+.modal-body {
+  padding: 2rem;
+}
+.modal-footer {
+  border-top: none;
+}
+
+/* Formulaires */
+.form-select, .form-control {
+  border-radius: 0.5rem;
+  border-color: var(--gray-dark);
+  box-shadow: none;
+  transition: border-color 0.3s ease;
+}
+.form-select:focus, .form-control:focus {
+  border-color: var(--blue-dark);
+  box-shadow: 0 0 0 0.2rem rgba(53, 133, 230, 0.25);
+}
+
+/* Animations supplémentaires */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+
+/* Divers utilitaires */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}

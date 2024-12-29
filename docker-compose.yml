@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  web:
+    build: .           # <-- On build depuis le Dockerfile qu'on vient de créer
+    container_name: guemiloute-web
+    ports:
+      - "80:80"
+    volumes:
+      - ./public:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: guemiloute-db
+    environment:
+      MYSQL_DATABASE: guemiloute
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: guemiloute
+      MYSQL_PASSWORD: guemiloute
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
