@@ -1,0 +1,135 @@
+/* commit name: enhanced-object-details-styles */
+
+/* Contexte général */
+#objectDetailsPage {
+    background-color: #f4f8fc;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Titre principal */
+#objectDetailsPage h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Informations générales */
+#objectDetailsPage p {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+#objectDetailsPage hr {
+    border: none;
+    border-top: 2px solid #bdc3c7;
+    margin: 2rem 0;
+}
+
+/* Section des images */
+#objectDetailsCarousel img {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid #ecf0f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#objectDetailsCarousel .carousel-control-prev-icon,
+#objectDetailsCarousel .carousel-control-next-icon {
+    background-color: rgba(52, 73, 94, 0.7);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+#objectDetailsCarousel .carousel-control-prev-icon:hover,
+#objectDetailsCarousel .carousel-control-next-icon:hover {
+    background-color: #3498db;
+}
+
+/* Section prêteur */
+#preteurSection {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid #2980b9;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+#preteurSection h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #bdc3c7;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#preteurSection p {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin: 0.6rem 0;
+}
+
+#preteurSection p span {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Boutons */
+#objectDetailsPage a.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#objectDetailsPage a.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #objectDetailsCarousel img {
+        max-height: 300px;
+    }
+
+    #objectDetailsPage h1 {
+        font-size: 2rem;
+    }
+
+    #preteurSection {
+        padding: 1.5rem;
+    }
+}

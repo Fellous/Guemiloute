@@ -129,3 +129,23 @@ body {
   max-width: 100%;
   height: auto;
 }
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--blue-dark);
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: var(--gray-dark);
+}
+
+.carousel-inner img {
+  height: 400px;
+  object-fit: contain;
+}
