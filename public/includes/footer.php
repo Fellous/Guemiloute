@@ -21,6 +21,13 @@
 
 <!-- Notre script perso -->
 <script src="assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // Durée des animations (en ms)
+      once: true, // Animation déclenchée une seule fois
+    });
+  </script>
 
 </body>
 </html>
