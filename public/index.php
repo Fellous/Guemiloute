@@ -9,6 +9,9 @@ if (!empty($_GET['msg'])) {
 }
 ?>
 
+<!-- Lien vers AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
 <div class="container py-5">
   <!-- Hero Section -->
   <div class="row align-items-center gy-4">
@@ -102,5 +105,15 @@ if (!empty($_GET['msg'])) {
     </p>
   </div>
 </div>
+
+<!-- Lien vers AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  // Initialisation de AOS
+  AOS.init({
+    duration: 1200, // Durée des animations
+    once: true, // Animation uniquement au premier défilement
+  });
+</script>
 
 <?php include 'includes/footer.php'; ?>

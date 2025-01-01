@@ -33,9 +33,14 @@ require_once __DIR__ . '/../config.php'; // Assurez-vous que BASE_URL est défin
   <!-- Style personnalisé -->
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/menu.css">
+  <script src="<?= BASE_URL ?>assets/js/animated_background.js" defer></script>
+
 </head>
 
 <body>
+<div id="background-animation"></div>
+
+
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-darkblue shadow sticky-top">

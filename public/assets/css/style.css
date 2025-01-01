@@ -137,3 +137,42 @@ body {
   height: 400px;
   object-fit: contain;
 }
+/* commit name: randomized-bubbles-enhanced */
+
+/* Conteneur général pour les bulles */
+#background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Assure que les bulles restent en arrière-plan */
+  overflow: hidden;
+  background: linear-gradient(to bottom, #dceefb, #a2d9ff); /* Dégradé bleu ciel */
+}
+
+/* Style des bulles */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(135, 206, 250, 0.8), rgba(70, 130, 180, 0.6)); /* Gradient subtile */
+  animation: floatRandom 20s infinite ease-in-out; /* Animation fluide avec trajectoires aléatoires */
+  opacity: 0.9; /* Transparence légère */
+  mix-blend-mode: screen; /* Superposition visuelle améliorée */
+}
+
+/* Animation des bulles */
+@keyframes floatRandom {
+  0% {
+      transform: translate(var(--start-x), var(--start-y)) scale(var(--scale));
+      opacity: 0.5;
+  }
+  50% {
+      transform: translate(var(--mid-x), var(--mid-y)) scale(calc(var(--scale) * 1.5));
+      opacity: 0.8;
+  }
+  100% {
+      transform: translate(var(--end-x), var(--end-y)) scale(var(--scale));
+      opacity: 0.3;
+  }
+}
