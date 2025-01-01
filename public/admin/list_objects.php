@@ -1,4 +1,4 @@
-<?php 
+<?php
 $pageTitle = "Liste des objets";
 require_once '../includes/header.php';
 
@@ -43,26 +43,28 @@ $categories = $pdo->query("SELECT id, name FROM categories")->fetchAll(PDO::FETC
 
 <!-- Modal pour l'attribution d'un objet -->
 <div class="modal fade" id="attributeModal" tabindex="-1" aria-labelledby="attributeModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="attributeModalLabel">Attribuer un objet</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="attributeForm">
-          <input type="hidden" id="objectId" name="object_id">
-          <div class="mb-3">
-            <label for="preteurSelect" class="form-label">Sélectionnez un prêteur</label>
-            <select id="preteurSelect" class="form-select" required>
-              <option value="">-- Sélectionnez un prêteur --</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary">Attribuer</button>
-        </form>
-      </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="attributeModalLabel">Attribuer un objet</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="attributeForm">
+                    <input type="hidden" id="objectId" name="object_id">
+                    <div class="mb-3">
+                        <label for="preteurSelect" class="form-label">Sélectionnez un prêteur</label>
+                        <input type="hidden" id="objectId" name="object_id">
+                        <select id="preteurSelect" class="form-select" required>
+                            <option value="">-- Sélectionnez un prêteur --</option>
+                        </select>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">Attribuer</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <script src="../assets/js/list_objects.js"></script>
