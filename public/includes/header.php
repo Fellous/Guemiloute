@@ -33,12 +33,13 @@ require_once __DIR__ . '/../config.php'; // Assurez-vous que BASE_URL est défin
   <!-- Style personnalisé -->
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/menu.css">
+  
   <script src="<?= BASE_URL ?>assets/js/animated_background.js" defer></script>
 
 </head>
 
 <body>
-<div id="background-animation"></div>
+  <div id="background-animation"></div>
 
 
 
@@ -102,6 +103,11 @@ require_once __DIR__ . '/../config.php'; // Assurez-vous que BASE_URL est défin
 
               <?php if (($_SESSION['role'] ?? '') === 'preteur' || ($_SESSION['role'] ?? '') === 'admin'): ?>
                 <!-- Menu déroulant pour les prêteurs -->
+                <li class="nav-item">
+                  <a class="nav-link" href="<?= BASE_URL ?>preteur_emprunts.php">
+                    <i class="bi bi-card-list"></i> Gestion des emprunts
+                  </a>
+                </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="preteurDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-person-lines-fill"></i> Profil

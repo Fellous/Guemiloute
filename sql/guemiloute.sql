@@ -79,3 +79,5 @@ CREATE TABLE annonces (
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+ALTER TABLE emprunts ADD COLUMN status ENUM('en_cours', 'termine') NOT NULL DEFAULT 'en_cours';
