@@ -1,21 +1,17 @@
 <?php
-// commit name: header-with-icons-and-mobile-fix
-
 if (session_status() === PHP_SESSION_NONE) {
-  session_start();
+    session_start();
 }
 
 // Définir $pageTitle si non défini
 if (!isset($pageTitle)) {
-  $pageTitle = "Guemiloute";
+    $pageTitle = "Guemiloute";
 }
 
-// Inclure un fichier de configuration si nécessaire
 require_once __DIR__ . '/../config.php'; // Assurez-vous que BASE_URL est défini ici
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <title><?= htmlspecialchars($pageTitle) ?></title>
@@ -33,15 +29,15 @@ require_once __DIR__ . '/../config.php'; // Assurez-vous que BASE_URL est défin
   <!-- Style personnalisé -->
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
   <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/menu.css">
-  
-  <script src="<?= BASE_URL ?>assets/js/animated_background.js" defer></script>
 
+  <!-- Script d'arrière-plan animé (optionnel) -->
+  <script src="<?= BASE_URL ?>assets/js/animated_background.js" defer></script>
 </head>
 
-<body>
+<!-- Corps de page avec l'ID de l'utilisateur -->
+<body data-user-id="<?= $_SESSION['user_id'] ?? '' ?>">
+
   <div id="background-animation"></div>
-
-
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-darkblue shadow sticky-top">
@@ -68,7 +64,7 @@ require_once __DIR__ . '/../config.php'; // Assurez-vous que BASE_URL est défin
               <!-- Salutation utilisateur connecté -->
               <li class="nav-item">
                 <span class="nav-link">
-                  <i class="bi bi-person-circle"></i> Bonjour, <?= htmlspecialchars($_SESSION['username'] ?? 'Utilisateur') ?>
+                  <i class="bi bi-person-circle"></i> Bonjour, <?= htmlspecialchars($_SESSION['last_name'] ?? 'Utilisateur') ?>
                 </span>
               </li>
 
@@ -78,6 +74,7 @@ require_once __DIR__ . '/../config.php'; // Assurez-vous que BASE_URL est défin
                   <i class="bi bi-house-door"></i> Accueil
                 </a>
               </li>
+
               <!-- Lien Catalogue -->
               <li class="nav-item">
                 <a class="nav-link" href="<?= BASE_URL ?>catalog.php">
@@ -85,6 +82,12 @@ require_once __DIR__ . '/../config.php'; // Assurez-vous que BASE_URL est défin
                 </a>
               </li>
 
+              <!-- Lien Dons -->
+              <li class="nav-item">
+                <a class="nav-link" href="<?= BASE_URL ?>dons.php">
+                  <i class="bi bi-gift"></i> Dons
+                </a>
+              </li>
 
               <?php if (($_SESSION['role'] ?? '') === 'admin'): ?>
                 <!-- Menu déroulant pour l'admin -->
@@ -102,13 +105,22 @@ require_once __DIR__ . '/../config.php'; // Assurez-vous que BASE_URL est défin
               <?php endif; ?>
 
               <?php if (($_SESSION['role'] ?? '') === 'preteur' || ($_SESSION['role'] ?? '') === 'admin'): ?>
-                <!-- Menu déroulant pour les prêteurs -->
+                <!-- Menu pour les prêteurs -->
                 <li class="nav-item">
                   <a class="nav-link" href="<?= BASE_URL ?>preteur_emprunts.php">
                     <i class="bi bi-card-list"></i> Gestion des emprunts
                   </a>
                 </li>
-                <li class="nav-item dropdown">
+               
+              <?php endif; ?>
+
+              <!-- Lien Gestion des emprunts en tant qu'emprunteur -->
+              <li class="nav-item">
+                <a class="nav-link" href="<?= BASE_URL ?>borrower_emprunts.php">
+                  <i class="bi bi-journal-check"></i> Mes emprunts
+                </a>
+              </li>
+              <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="preteurDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-person-lines-fill"></i> Profil
                   </a>
@@ -117,7 +129,6 @@ require_once __DIR__ . '/../config.php'; // Assurez-vous que BASE_URL est défin
                     <li><a class="dropdown-item" href="<?= BASE_URL ?>view_profile.php">Voir mon profil</a></li>
                   </ul>
                 </li>
-              <?php endif; ?>
 
               <!-- Lien Déconnexion -->
               <li class="nav-item">

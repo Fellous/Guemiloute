@@ -48,7 +48,7 @@ attributeButtons.forEach(button => {
         preteurs.forEach(preteur => {
             const option = document.createElement("option");
             option.value = preteur.id;
-            option.textContent = preteur.username;
+            option.textContent = preteur.last_name;
             preteurSelect.appendChild(option);
         });
 

@@ -1,46 +1,99 @@
-/* commit name: admin-css-beautify
-   - Style dédié aux pages admin (ex. admin_users.php)
-*/
+/* Styles principaux pour la page admin */
 
-/* On peut personnaliser la section admin, ex. un fond clair */
 .admin-container {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  background: linear-gradient(135deg, rgba(53, 133, 230, 0.05), rgba(173, 216, 230, 0.05));
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.admin-container h2 {
-  font-weight: 700;
+.admin-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
   color: #2c3e50;
-  margin-bottom: 1.5rem;
 }
 
+.admin-header .btn {
+  background-color: #1e81b0;
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.admin-header .btn:hover {
+  background-color: #155a75;
+  color: #fff;
+}
+
+/* Table styles */
 #usersTable {
-  /* On peut jouer sur le design du tableau */
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+}
+
+#usersTable th,
+#usersTable td {
+  text-align: center; /* Centre les colonnes */
+  vertical-align: middle;
+  padding: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #usersTable thead th {
-  background-color: #343a40; /* fond sombre */
-  color: #ffffff;
+  background-color: #1e81b0; /* Bleu clair */
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  padding: 15px;
+}
+
+#usersTable tbody tr {
+  transition: all 0.2s ease-in-out;
 }
 
 #usersTable tbody tr:hover {
-  background-color: #f5f5f5; /* survol */
+  background-color: rgba(30, 129, 176, 0.1); /* Survol avec une couleur douce */
+  transform: scale(1.01); /* Effet de zoom léger */
 }
 
-/* Style du <select> */
-.role-select {
-  min-width: 120px;
+#usersTable tbody td {
+  background-color: #fff;
+  color: #2c3e50;
 }
 
-/* On peut styliser un label "Rôle" si besoin */
-td select.form-select {
-  /* Ajout d'une légère ombre */
-  box-shadow: none;
-  transition: all .2s ease;
+/* Style des colonnes spécifiques */
+#usersTable tbody td:first-child {
+  font-weight: bold;
+  color: #1e81b0;
 }
 
-td select.form-select:hover {
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+#usersTable tbody td select {
+  width: 100%;
+  max-width: 150px;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: rgba(30, 129, 176, 0.05);
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+#usersTable tbody td select:focus {
+  border-color: #1e81b0;
+  box-shadow: 0 0 8px rgba(30, 129, 176, 0.4);
+}
+
+/* Effet de bordure arrondie pour le tableau */
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding: 0;
 }

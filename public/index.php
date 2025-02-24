@@ -11,6 +11,8 @@ if (!empty($_GET['msg'])) {
 
 <!-- Lien vers AOS CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/index.css">
+
 
 <div class="container py-5">
   <!-- Hero Section -->
@@ -25,18 +27,18 @@ if (!empty($_GET['msg'])) {
         pour s'entraider en mettant des objets à disposition de tous.
       </p>
       <?php if (!isset($_SESSION['user_id'])): ?>
-        <a href="login.php" class="btn btn-primary btn-lg mt-3" data-aos="fade-up">
-          Rejoindre l'entraide
+        <a href="login.php" class="btn btn-primary btn-lg mt-3 shadow-lg" data-aos="fade-up">
+          <i class="bi bi-person-plus"></i> Rejoindre l'entraide
         </a>
       <?php else: ?>
-        <a href="logout.php" class="btn btn-secondary btn-lg mt-3" data-aos="fade-up">
-          Se déconnecter
+        <a href="logout.php" class="btn btn-secondary btn-lg mt-3 shadow-lg" data-aos="fade-up">
+          <i class="bi bi-box-arrow-right"></i> Se déconnecter
         </a>
       <?php endif; ?>
     </div>
 
     <div class="col-12 col-md-6" data-aos="fade-left">
-      <img src="assets/images/gmah-hero.webp" alt="Famille prêteuse" class="img-fluid rounded shadow">
+      <img src="assets/images/gmah-hero.webp" alt="Famille prêteuse" class="img-fluid rounded shadow-lg">
     </div>
   </div>
 </div>
@@ -45,17 +47,17 @@ if (!empty($_GET['msg'])) {
 
 <!-- Section sur les fonctionnalités principales -->
 <div class="container pb-5">
-  <h2 class="mb-4 fw-bold text-center" data-aos="fade-down">
+  <h2 class="mb-4 fw-bold text-center text-primary" data-aos="fade-down">
     Fonctionnalités de Guemiloute
   </h2>
 
   <div class="row g-4">
-    <!-- Ex : Catalogue objet -->
+    <!-- Carte : Catalogue objet -->
     <div class="col-12 col-sm-6 col-lg-4" data-aos="zoom-in">
-      <div class="card h-100 shadow-sm">
+      <div class="card h-100 shadow border-0">
         <img src="assets/images/catalogue.webp" class="card-img-top img-fluid" alt="Catalogue d'objets">
         <div class="card-body">
-          <h5 class="card-title">Catalogue d'objets disponible</h5>
+          <h5 class="card-title text-primary"><i class="bi bi-list-task"></i> Catalogue d'objets disponible</h5>
           <p class="card-text">
             Parcourez la liste des objets en stock chez les familles prêteuses : meubles, livres, matériel
             de bébé, etc. Affichage de la quantité et de l'état (neuf, bien, moyen...). Système de
@@ -65,12 +67,12 @@ if (!empty($_GET['msg'])) {
       </div>
     </div>
 
-    <!-- Ex : Emprunts & Retours -->
+    <!-- Carte : Emprunts & Retours -->
     <div class="col-12 col-sm-6 col-lg-4" data-aos="zoom-in">
-      <div class="card h-100 shadow-sm">
+      <div class="card h-100 shadow border-0">
         <img src="assets/images/emprunt.webp" class="card-img-top img-fluid" alt="Emprunt d'objets">
         <div class="card-body">
-          <h5 class="card-title">Gestion des emprunts</h5>
+          <h5 class="card-title text-primary"><i class="bi bi-box-arrow-in-down"></i> Gestion des emprunts</h5>
           <p class="card-text">
             Organisez vos prêts et retours, fixez la date de restitution, suivez l'historique complet
             (dates d'emprunt, quantités, emprunteur précédent). Les familles chômer-hinam peuvent
@@ -80,12 +82,12 @@ if (!empty($_GET['msg'])) {
       </div>
     </div>
 
-    <!-- Ex : Dons et petites ventes -->
+    <!-- Carte : Dons et petites ventes -->
     <div class="col-12 col-sm-6 col-lg-4" data-aos="zoom-in">
-      <div class="card h-100 shadow-sm">
+      <div class="card h-100 shadow border-0">
         <img src="assets/images/don-vente.webp" class="card-img-top img-fluid" alt="Dons et ventes">
         <div class="card-body">
-          <h5 class="card-title">Dons & Petites Ventes</h5>
+          <h5 class="card-title text-primary"><i class="bi bi-heart"></i> Dons & Petites Ventes</h5>
           <p class="card-text">
             Proposez un <strong>don</strong> ou une <strong>vente à petit prix</strong> à la communauté,
             téléchargez une photo et une courte description, précisez le prix si besoin, mettez l'annonce

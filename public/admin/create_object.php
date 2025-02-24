@@ -15,7 +15,7 @@ if (!isset($_SESSION['user_id']) || ($_SESSION['role'] ?? '') !== 'admin') {
 require_once '../db.php';
 
 // Récupérer la liste des prêteurs pour le sélecteur
-$sql = "SELECT id, username FROM users WHERE role = 'preteur' ORDER BY username ASC";
+$sql = "SELECT id, last_name FROM users WHERE role = 'preteur' ORDER BY last_name ASC";
 $stmt = $pdo->query($sql);
 $preteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -73,7 +73,7 @@ $preteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <select class="form-select" id="preteur" name="preteur">
                 <option value="">Non attribué</option>
                 <?php foreach ($preteurs as $preteur): ?>
-                    <option value="<?= $preteur['id'] ?>"><?= htmlspecialchars($preteur['username']) ?></option>
+                    <option value="<?= $preteur['id'] ?>"><?= htmlspecialchars($preteur['last_name']) ?></option>
                 <?php endforeach; ?>
             </select>
         </div>

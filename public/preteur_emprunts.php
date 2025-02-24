@@ -1,12 +1,17 @@
 <?php
-$pageTitle = "Mes objets prêtés";
-require_once 'includes/header.php';
+session_start(); // Toujours démarrer la session avant toute sortie de contenu
 
+// Vérification de l'accès
 if (!isset($_SESSION['user_id']) || ($_SESSION['role'] ?? '') !== 'preteur') {
-    header("Location: login.php");
+    header("Location: login.php?msg=Accès refusé.");
     exit;
 }
+
+// Inclure le fichier header seulement après la vérification
+$pageTitle = "Mes objets prêtés";
+require_once 'includes/header.php';
 ?>
+
 
 <div class="container my-5">
     <h1 class="mb-4">Gestion des emprunts</h1>

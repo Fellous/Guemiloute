@@ -1,0 +1,51 @@
+/* Conteneur principal */
+.container {
+    margin-top: 20px;
+}
+
+/* Cartes */
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card h5 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Couleurs de statut */
+.text-success {
+    color: #28a745;
+}
+
+.text-warning {
+    color: #ffc107;
+}
+
+.text-danger {
+    color: #dc3545;
+}
+
+/* Style des messages */
+.card p {
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Onglets */
+.nav-tabs .nav-link {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}

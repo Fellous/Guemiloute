@@ -44,7 +44,7 @@ function getEmprunts($status, $pdo)
 {
     $preteur_id = $_SESSION['user_id'];
     $sql = "
-        SELECT e.id, o.name AS object_name, u.username AS emprunteur_name,
+        SELECT e.id, o.name AS object_name, u.last_name AS emprunteur_name,
                e.date_start, e.date_end, e.returned_date, e.quantity_borrowed, o.state
         FROM emprunts e
         JOIN objects o ON e.object_id = o.id
@@ -74,7 +74,7 @@ function getObjects($pdo)
 // Récupérer tous les emprunteurs
 function getEmprunteurs($pdo)
 {
-    $sql = "SELECT id, username FROM users WHERE role IN ('emprunteur', 'preteur') ORDER BY username ASC";
+    $sql = "SELECT id, last_name FROM users WHERE role IN ('emprunteur', 'preteur') ORDER BY last_name ASC";
     $stmt = $pdo->query($sql);
     $emprunteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

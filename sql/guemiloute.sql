@@ -8,13 +8,16 @@ USE guemiloute;
 -- Table des utilisateurs (emprunteur, prêteur, admin)
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(100) NOT NULL UNIQUE,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
     email VARCHAR(150) NOT NULL UNIQUE,
     phone VARCHAR(50),
     address VARCHAR(255),
     city VARCHAR(100),
     role ENUM('emprunteur','preteur','admin') NOT NULL DEFAULT 'emprunteur',
+    additional_info TEXT,
+    availability TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -65,6 +68,9 @@ CREATE TABLE emprunts (
     FOREIGN KEY (preteur_id) REFERENCES users(id)
 );
 
+ALTER TABLE emprunts 
+ADD COLUMN status ENUM('en_cours','termine') NOT NULL DEFAULT 'en_cours';
+
 -- Table des annonces (dons / ventes)
 CREATE TABLE annonces (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -74,10 +80,12 @@ CREATE TABLE annonces (
     description TEXT,
     price DECIMAL(10,2) DEFAULT NULL,
     image_url VARCHAR(255),
-    reserved TINYINT(1) NOT NULL DEFAULT 0,
+    reservation_status ENUM('disponible','reserve','donne','annule') NOT NULL DEFAULT 'disponible',
+    reserved_by INT DEFAULT NULL,
+    reserved_at DATETIME DEFAULT NULL,
+    confirmed_by_donor BOOLEAN DEFAULT FALSE,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (reserved_by) REFERENCES users(id)
 );
-
-ALTER TABLE emprunts ADD COLUMN status ENUM('en_cours', 'termine') NOT NULL DEFAULT 'en_cours';

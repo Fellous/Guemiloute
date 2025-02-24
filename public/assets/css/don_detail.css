@@ -1,0 +1,84 @@
+/* don_detail.css */
+
+/* Contexte général */
+#donDetailPage {
+    background-color: #f4f8fc;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Titre principal */
+#donDetailPage h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Section du carousel */
+#donDetailsCarousel .carousel-item img {
+    width: 100%;
+    height: 300px; /* Taille uniforme */
+    object-fit: contain;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    border: 3px solid #ecf0f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#donDetailsCarousel .carousel-control-prev-icon,
+#donDetailsCarousel .carousel-control-next-icon {
+    background-color: rgba(52, 73, 94, 0.7);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+#donDetailsCarousel .carousel-control-prev-icon:hover,
+#donDetailsCarousel .carousel-control-next-icon:hover {
+    background-color: #3498db;
+}
+
+/* Section description */
+#donDetailPage h3 {
+    color: #2c3e50;
+    margin-top: 1rem;
+}
+#donDetailPage p {
+    font-size: 1.1rem;
+    color: #34495e;
+    line-height: 1.6;
+}
+
+/* Section des actions */
+.action-buttons button {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+/* Section donneur */
+#donateurSection {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+#donateurSection h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #bdc3c7;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+#donateurSection p {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin: 0.6rem 0;
+}

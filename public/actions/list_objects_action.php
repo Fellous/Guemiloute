@@ -24,7 +24,7 @@ $attribute = $_GET['attribute'] ?? null;
 // Construire la requête SQL avec filtres
 $sql = "
     SELECT 
-        o.id, o.name, o.quantity, o.state, c.name AS category_name, u.username AS preteur_name,
+        o.id, o.name, o.quantity, o.state, c.name AS category_name, u.last_name AS preteur_name,
         (SELECT image_url FROM object_images WHERE object_id = o.id LIMIT 1) AS image_url
     FROM objects o
     LEFT JOIN categories c ON o.category_id = c.id

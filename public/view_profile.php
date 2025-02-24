@@ -1,10 +1,8 @@
 <?php
-// commit name: view-profile-for-connected-user
+// commit name: view-profile-for-all-users
 // - Affiche les informations du profil de l'utilisateur connecté
-
 session_start();
 
-// Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php?msg=Veuillez vous connecter pour accéder à votre profil.");
     exit;
@@ -15,7 +13,7 @@ require_once 'includes/header.php';
 require_once 'db.php';
 
 // Récupérer les informations de l'utilisateur connecté
-$sql = "SELECT username, email, phone, address, city, additional_info, availability 
+$sql = "SELECT first_name, last_name, email, phone, address, city, additional_info, availability 
         FROM users WHERE id = :user_id";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(['user_id' => $_SESSION['user_id']]);
@@ -27,16 +25,13 @@ if (!$user) {
     exit;
 }
 
-// Décoder les disponibilités
 $availability = json_decode($user['availability'] ?? '[]', true);
 ?>
-
 <div class="container my-5">
     <h2 class="mb-4">Mon profil</h2>
-
     <div class="card shadow-sm">
         <div class="card-body">
-            <h4 class="card-title"><?= htmlspecialchars($user['username']) ?></h4>
+            <h4 class="card-title"><?= htmlspecialchars($user['first_name'] . ' ' . $user['last_name']) ?></h4>
             <p class="card-text"><strong>Email :</strong> <?= htmlspecialchars($user['email']) ?></p>
             <p class="card-text"><strong>Téléphone :</strong> <?= htmlspecialchars($user['phone'] ?? 'Non renseigné') ?></p>
             <p class="card-text"><strong>Adresse :</strong> <?= htmlspecialchars($user['address'] ?? 'Non renseignée') ?></p>
@@ -54,10 +49,8 @@ $availability = json_decode($user['availability'] ?? '[]', true);
             </ul>
         </div>
     </div>
-
     <div class="mt-4">
         <a href="edit_profile.php" class="btn btn-primary">Modifier mon profil</a>
     </div>
 </div>
-
 <?php require_once 'includes/footer.php'; ?>

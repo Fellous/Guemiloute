@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const response = await fetch("actions/preteur_emprunts_action.php?action=get_emprunteurs");
         const data = await response.json();
         emprunteurSelect.innerHTML = data.message || data.map(
-            user => `<option value="${user.id}">${user.username}</option>`
+            user => `<option value="${user.id}">${user.last_name}</option>`
         ).join("");
     }
 

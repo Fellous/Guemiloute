@@ -1,15 +1,12 @@
 <?php
-// commit name: frosted-glass-login
-// - Ajout d'une carte effet glace pour le formulaire de connexion
-// - Couleurs et style adaptés à l'arrière-plan animé existant
-
 $pageTitle = "Connexion - Guemiloute";
 include 'includes/header.php';
 ?>
 
 <div class="login-container">
     <div class="login-card">
-        <h2 class="login-title">Connexion</h2>
+        <h2 class="login-title">Bienvenue sur Guemiloute</h2>
+        <p class="login-subtitle">Connectez-vous pour continuer</p>
 
         <?php
         // Affichage d'un message d'information, si présent dans l'URL
@@ -31,10 +28,9 @@ include 'includes/header.php';
             <p class="text-center mt-3">
                 Pas de compte ? <a href="register.php">S’inscrire</a>
             </p>
-            
         </form>
     </div>
-</div>
+</div>  
 
 <link rel="stylesheet" href="assets/css/login.css">
 <?php include 'includes/footer.php'; ?>

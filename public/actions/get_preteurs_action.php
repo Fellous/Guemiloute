@@ -18,7 +18,7 @@ if (!isset($_SESSION['user_id']) || ($_SESSION['role'] ?? '') !== 'admin') {
 require_once '../db.php';
 
 // Récupérer les prêteurs
-$sql = "SELECT id, username FROM users WHERE role = 'preteur' ORDER BY username ASC";
+$sql = "SELECT id, last_name FROM users WHERE role = 'preteur' ORDER BY last_name ASC";
 $stmt = $pdo->query($sql);
 $preteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

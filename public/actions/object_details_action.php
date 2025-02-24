@@ -20,7 +20,7 @@ $sql = "
         o.quantity,
         o.address AS object_address,
         o.city AS object_city,
-        u.username AS preteur_name,
+        u.last_name AS preteur_name,
         u.phone AS preteur_phone,
         u.address AS preteur_address,
         u.city AS preteur_city,
